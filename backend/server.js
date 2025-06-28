@@ -35,6 +35,7 @@ app.use('/uploads', express.static('uploads'));
 app.use("/", require("./routes/loginRoutes"));
 app.use("/", require("./routes/meRoutes"));
 app.use("/api/documents", require("./routes/fileUploadRoutes"));
+app.use("/api/cases", require("./routes/caseRoutes"));
 
 
 app.get('/', (req, res) => {

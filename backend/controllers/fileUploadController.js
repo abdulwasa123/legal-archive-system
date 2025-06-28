@@ -44,4 +44,14 @@ const uploadDocument = async (req, res) => {
   }
 };
 
-module.exports = { uploadDocument };
+const getAllDocuments = async (req, res) => { //display uploaded doc
+  try {
+    const documents = await Document.find();
+    res.status(200).json(documents);
+  } catch (error) {
+    console.error('❌ Error fetching documents:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+module.exports = { uploadDocument, getAllDocuments };
