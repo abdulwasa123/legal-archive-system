@@ -1,0 +1,34 @@
+I’ve implemented the file upload feature on the backend. 
+You can now send a request to my API endpoint to upload documents 
+with metadata (title, case number, status, etc.) along with the file itself. 
+I will give you the API details, expected request format, and the response you’ll get.
+
+API Endpoint URL:
+
+http://localhost:5000/api/documents/upload
+
+Method: POST
+
+Request Type:
+multipart/form-data (because it's a file + text fields)
+
+Required Form Data Fields:
+Key	         Type	    Description (you are not adding the description its just there for u to understand o)
+file	     File	    The document file (PDF, DOCX, etc.)
+title	     Text	    Document title
+description	 Text	    Short description
+caseNumber	 Text	    Case number (e.g., SCM/2024/001)
+type	     Text	    Document type (e.g., Judgment)
+parties	     Text	    Parties involved
+date	     Text	    Date (Format: YYYY-MM-DD)
+status	     Text       Active / Closed / Pending
+priority	 Text	    High / Medium / Low
+
+These fields must be included in the form.
+
+
+to Display Uploaded Documents use this endpoint - 
+
+GET http://localhost:5000/api/documents
+
+also to run the backend because the backend has to be running for it to work use npm run devStart
